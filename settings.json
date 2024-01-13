@@ -1,9 +1,8 @@
 {
 
     "nodes": {
-        "massa_01": "http://209.85.233.139:33035/api/v2",
-        "massa_02": "http://2a00:1450:4010:c0b::71:33035/api/v2",
-        "massa_03": "https://my_massa_node.hosting.net:33035/api/v2"
+        "massa_remote": "http://12.34.56.789:33035/api/v2",
+        "massa_local": "http://127.0.0.1:33035/api/v2"
     },
 
     "probe_timeout_seconds": 15,
