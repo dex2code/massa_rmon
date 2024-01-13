@@ -114,7 +114,7 @@ if __name__ == "__main__":
         logger.info(f" - '{node_name}': '{node_api}'")
 
     logger.info(f"Settings file loaded successfully!")
-    logger.info(f"Watching nodes with {app_settings['loop_timeout_seconds']} seconds loop delay:")
+    logger.info(f"Watching nodes with {app_settings['loop_timeout_seconds']} seconds loop delay.")
 
     send_telegram_message(message=f"💡 Service successfully started to watch the following nodes:\n{nodes_list.rstrip()}\n\nMain loop delay: {app_settings['loop_timeout_seconds']} seconds\n")
 
