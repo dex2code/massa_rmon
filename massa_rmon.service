@@ -1,0 +1,15 @@
+[Unit]
+Description=MASSA Remote Monitoring service
+Wants=network.target
+After=network.target
+
+[Service]
+Type=idle
+User=$USER
+WorkingDirectory=$HOME/massa_rmon
+ExecStart=$HOME/massa_rmon/bin/python3 main.py
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
