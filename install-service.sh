@@ -40,7 +40,7 @@ else
 fi
 
 
-echo "Reloading systemd daemon configuration... "
+echo -n "Reloading systemd daemon configuration... "
 sudo systemctl daemon-reload
 
 if [[ $? -eq 0 ]]
