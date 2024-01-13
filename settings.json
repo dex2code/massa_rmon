@@ -11,7 +11,7 @@
 
     "telegram_key": "!!! PUT YOUR TG BOT KEY HERE !!!",
     "telegram_chat": "!!! PUT TG CHAT ID OR YOUR TG ID HERE !!!",
-    
+
     "telegram_nickname": "🤖 MASSA remote monitoring"
 
 }
