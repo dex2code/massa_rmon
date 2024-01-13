@@ -4,7 +4,7 @@ A simple monitoring agent for your MASSA node.
 
 With this service you can check the availability of one or several nodes remotely via the Internet or locally on the server.
 
-All notifications come to your telegram messenger. The service notices you only if status of your node changed (alive -> dead or dead -> alive).
+All notifications come to your telegram messenger. The service notices you if status of your node changed (`alive -> dead` or `dead -> alive`).
 
 
 
