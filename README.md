@@ -118,6 +118,8 @@ Next message(s) is about your node availability:
 
 `🤖 MASSA remote monitoring: ⚠ Node 'massa_local' (http://127.0.0.1:33035/api/v2) seems dead or unavailable! Check node status or firewall settings (sudo ufw allow 33035/tcp)` - Node is unavailable. You should check all your settings and restart service: `sudo systemctl restart massa_rmon.service`.
 
+
+
 When everything is fine and working correct you should enable systemd service to restore it after server reboot.
 
 You can easily do it with `sudo systemctl enable massa_rmon.service`.
