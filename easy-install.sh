@@ -143,6 +143,10 @@ clear
 echo
 echo "Now you need to configure the service and start it."
 echo
+echo "Please note if you watch remote MASSA node you MUST open firewall on your node host."
+echo "You can do it with command 'sudo ufw allow 33035/tcp'. If your firewall is closed for 33035/tcp port - your node will be unavailable for monitoring service."
+echo "You don't need to open firewall if you watch local (127.0.0.1) host."
+echo
 echo "Service settings are located in '~/$DESTDIR/settings.json' file and you can edit it with 'nano ~/$DESTDIR/settings.json' command."
 echo "After it you can start service with command 'sudo systemctl start massa_rmon.service'."
 echo
