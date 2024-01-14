@@ -8,7 +8,7 @@ All notifications come to your telegram messenger. The service notices you if st
 
 
 
-# Easy installation
+# Easy installation:
 
 If you use Ubuntu Linux just run this command in your terminal:
 ```
@@ -76,7 +76,7 @@ Follow the guide and after this go to the configuration step (3).
    - `telegram_chat` is the chat_id where bot will send the notifications to. You can use your telegram ID: https://www.youtube.com/watch?v=e_d3KqI6zkI
   
 
-4. Configure Firewall
+4. Configure Firewall:
 
    Normally MASSA uses 33035/tcp port to receive public API requests.
 
@@ -88,7 +88,7 @@ Follow the guide and after this go to the configuration step (3).
 
 
 
-# Running service
+# Running service:
 
 After all actions described above you can try to run the service: `sudo systemctl start massa_rmon.service`.
 
@@ -97,6 +97,7 @@ In normal way no errors or any other messages should be displayed on this comman
 You can additionally check the service with command `sudo systemctl status massa_rmon.service`
 
 You can also read the logfile: `tail ~/massa_rmon/main.log` or with `sudo journalctl -fu massa_rmon.service`
+
 
 After succesfull start you should immidiatelly receive two (or more, depends on number of your nodes) messages in your Telegram messenger:
 
@@ -107,6 +108,7 @@ After succesfull start you should immidiatelly receive two (or more, depends on 
 `Main loop delay: 600 seconds`
 
 This message means that your service is started successfully!
+
 
 Next message(s) is about your node availability:
 
@@ -119,11 +121,11 @@ When everything is fine and working correct you should enable systemd service to
 You can easily do it with `sudo systemctl enable massa_rmon.service`.
 
 
-# Uninstall service
+# Uninstall service:
 
 Just run the command: 
 ```
-bash ~/massa_rmon/uninstall.sh
+cd ~ && bash ~/massa_rmon/uninstall.sh
 ```
 
 This will stop service and erase all files and settings.
