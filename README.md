@@ -7,6 +7,7 @@ With this service you can check the availability of one or several nodes remotel
 All notifications come to your telegram messenger. The service notices you if status of your node changed (`alive -> dead` or `dead -> alive`).
 
 
+
 # Easy installation
 
 If you use Ubuntu Linux just run this command in your terminal:
@@ -17,6 +18,7 @@ cd ~ && bash <(wget -qO- https://raw.githubusercontent.com/dex2code/massa_rmon/m
 This command will install all necessary software and deploy service in your `$HOME/massa_rmon` directory.
 
 Follow the guide and after this go to the configuration step (3).
+
 
 
 # Manual Installation:
@@ -85,6 +87,7 @@ Follow the guide and after this go to the configuration step (3).
    `sudo ufw allow 33035/tcp`
 
 
+
 # Running service
 
 After all actions described above you can try to run the service: `sudo systemctl start massa_rmon.service`.
@@ -116,4 +119,12 @@ When everything is fine and working correct you should enable systemd service to
 You can easily do it with `sudo systemctl enable massa_rmon.service`.
 
 
-Good luck!
+# Uninstall service
+
+Just run the command: 
+```
+bash ~/massa_rmon/uninstall.sh
+```
+
+This will stop service and erase all files and settings.
+
