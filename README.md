@@ -9,8 +9,10 @@ All notifications come to your telegram messenger. The service notices you if st
 
 # Easy installation
 
-If you use Ubunto Linux just run this command in your terminal:
-```cd ~ && bash <(wget -qO- https://raw.githubusercontent.com/dex2code/massa_rmon/main/easy-install.sh)```
+If you use Ubuntu Linux just run this command in your terminal:
+```
+cd ~ && bash <(wget -qO- https://raw.githubusercontent.com/dex2code/massa_rmon/main/easy-install.sh)
+```
 
 This command will install all necessary software and deploy service in your `$HOME/massa_rmon` directory.
 
