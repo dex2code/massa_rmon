@@ -150,3 +150,4 @@ echo "If everything is fine please enable service with command 'sudo systemctl e
 echo
 echo "More information here: https://github.com/dex2code/massa_rmon.git"
 echo
+
