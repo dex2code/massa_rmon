@@ -7,8 +7,17 @@ With this service you can check the availability of one or several nodes remotel
 All notifications come to your telegram messenger. The service notices you if status of your node changed (`alive -> dead` or `dead -> alive`).
 
 
+# Easy installation
 
-# Installation:
+If you use Ubunto Linux just run this command in your terminal:
+```cd ~ && bash <(wget -qO- https://raw.githubusercontent.com/dex2code/massa_rmon/main/easy-install.sh)```
+
+This command will install all necessary software and deploy service in your `$HOME/massa_rmon` directory.
+
+Follow the guide and after this go to the configuration step (3).
+
+
+# Manual Installation:
 
 1. Install Python3 and modules:
    
@@ -44,11 +53,11 @@ All notifications come to your telegram messenger. The service notices you if st
 
 3. Configure service:
 
-   `nano ./settings.json`
+   Run `nano ~/massa_rmon/settings.json` command.
 
    Edit "nodes" section and put correct URL(s) into the config. Check the URL twice before save the file.
 
-   If you plan is to watch local node only, just remove first line (`massa_remote`) to get the following:
+   If your plan is to watch local node only, just remove first line (`massa_remote`) to get the following:
    
    `"massa_local": "http://127.0.0.1:33035/api/v2"`
 
@@ -82,7 +91,7 @@ In normal way no errors or any other messages should be displayed on this comman
 
 You can additionally check the service with command `sudo systemctl status massa_rmon.service`
 
-You can also read the logfile: `tail -f main.log` or with `sudo journalctl -fu massa_rmon.service`
+You can also read the logfile: `tail ~/massa_rmon/main.log` or with `sudo journalctl -fu massa_rmon.service`
 
 After succesfull start you should immidiatelly receive two (or more, depends on number of your nodes) messages in your Telegram messenger:
 
@@ -105,4 +114,4 @@ When everything is fine and working correct you should enable systemd service to
 You can easily do it with `sudo systemctl enable massa_rmon.service`.
 
 
-# Good Luck!
+Good luck!
