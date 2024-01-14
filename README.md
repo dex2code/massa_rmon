@@ -99,6 +99,7 @@ You can additionally check the service with command `sudo systemctl status massa
 You can also read the logfile: `tail ~/massa_rmon/main.log` or with `sudo journalctl -fu massa_rmon.service`
 
 
+
 After succesfull start you should immidiatelly receive two (or more, depends on number of your nodes) messages in your Telegram messenger:
 
 `🤖 MASSA remote monitoring: 💡 Service successfully started to watch the following nodes:`
@@ -108,6 +109,7 @@ After succesfull start you should immidiatelly receive two (or more, depends on 
 `Main loop delay: 600 seconds`
 
 This message means that your service is started successfully!
+
 
 
 Next message(s) is about your node availability:
