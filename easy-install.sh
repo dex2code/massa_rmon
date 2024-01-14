@@ -137,8 +137,9 @@ else
     exit 1
 fi
 
-echo "*** Installation done! Press Enter to continue... "
+echo -n "*** Installation done! Press Enter to continue... "
 read _
+clear
 echo
 echo "Now you need to configure the service and start it."
 echo
