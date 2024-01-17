@@ -58,6 +58,7 @@ def pull_node_api(node_api: str="") -> int:
         api_response = api_response['result']['chain_id']
         api_response = int(api_response)
     except Exception as E:
+        logger.warning(f"Error API response: ({str(E)})")
         return 0
     else:
         return api_response
