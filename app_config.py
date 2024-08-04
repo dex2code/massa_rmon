@@ -11,7 +11,8 @@ telegram = {
 }
 
 nodes = {
-   "ZORG": "https://zorg.ek.pp.ru/massa"
+   "LOCAL": "http://localhost:33035/api/v2",
+   "REMOTE": "https://mainnet.massa.net/api/v2"
 }
 
 http = {
