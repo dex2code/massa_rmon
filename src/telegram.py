@@ -4,19 +4,21 @@ from loguru import logger
 from os import getenv as os_getenv
 
 import asyncio
+from dotenv import load_dotenv
 from pydantic import BaseModel
 from typing import NoReturn
 from aiogram import Bot
 from aiogram.client.session.aiohttp import AiohttpSession
-from aiogram.utils.formatting import (
-   as_list,
-   as_line
-)
+from aiogram.utils.formatting import as_list
 from aiogram.enums import ParseMode
 from collections import deque
 
 from src.config import app_config
 
+
+if not load_dotenv():
+   raise Exception(f"Cannot load .env file")
+logger.info(f"Loaded .env file successfully")
 
 bot_session = AiohttpSession()
 telegram_bot = Bot(
