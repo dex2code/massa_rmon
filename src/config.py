@@ -1,4 +1,5 @@
 from __future__ import annotations
+from socket import gethostname
 from typing import (
    AnyStr,
    Dict
@@ -19,6 +20,7 @@ from app_config import (
 
 
 class AppConfig(BaseModel):
+   app_hostname: AnyStr
    app_cycle_duration_seconds: PositiveInt
    app_probes_per_cycle: PositiveInt
    telegram_nickname: AnyStr
@@ -28,10 +30,11 @@ class AppConfig(BaseModel):
    nodes: Dict[AnyStr, HttpUrl]
    http_request_header: Dict
    http_request_payload: Dict
-   massa_chain_id: PositiveInt
+   massa_find_key: AnyStr
 
 
 app_config: AppConfig = AppConfig(
+   app_hostname=gethostname(),
    app_cycle_duration_seconds=app['cycle_duration_seconds'],
    app_probes_per_cycle=app['probes_per_cycle'],
    telegram_nickname=telegram['nickname'],
@@ -41,7 +44,7 @@ app_config: AppConfig = AppConfig(
    nodes=nodes,
    http_request_header=http['request_header'],
    http_request_payload=http['request_payload'],
-   massa_chain_id=massa['chain_id']
+   massa_find_key=massa['find_key']
 )
 
 

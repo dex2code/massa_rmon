@@ -4,15 +4,15 @@ app = {
 }
 
 telegram = {
-   "nickname": "🤖 MASSA RM:",
-   "message": "🏭 Node {node_name}: {node_status}",
+   "nickname": "🤖 MASSA RM on {host_name} :",
+   "message": "🏭 Node {node_name}: {node_status} \n\n {node_error}",
    "sending_delay_seconds": 2.1,
    "sending_timeout_seconds": 5,
 }
 
 nodes = {
    "LOCAL": "http://localhost:33035/api/v2",
-   "REMOTE": "https://mainnet.massa.net/api/v2"
+   "REMOTE": "https://mainnet.massa.net/api/v2",
 }
 
 http = {
@@ -21,7 +21,7 @@ http = {
 }
 
 massa = {
-   "chain_id": 77658377
+   "find_key": "result"
 }
 
 

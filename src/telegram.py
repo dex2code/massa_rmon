@@ -18,7 +18,6 @@ from src.config import app_config
 
 if not load_dotenv():
    raise Exception(f"Cannot load .env file")
-logger.info(f"Loaded .env file successfully")
 
 bot_session = AiohttpSession()
 telegram_bot = Bot(
@@ -36,7 +35,7 @@ class AppCourier(BaseModel):
       try:
          assert isinstance(text_message, str)
          final_message = as_list(
-            app_config.telegram_nickname,
+            app_config.telegram_nickname.format(host_name=app_config.app_hostname),
             text_message
          ).as_html()
          self.queue.append(final_message)
@@ -47,21 +46,6 @@ class AppCourier(BaseModel):
 
 
 app_courier = AppCourier()
-
-
-@logger.catch
-def node_notify(node_name: str, node_status: bool) -> None:
-   text_status = "❓ Unknown"
-   if node_status:
-      text_status = "🟢 Online"
-   else:
-      text_status = "🔴 Offline"
-   text_message = app_config.telegram_message.format(
-      node_name=node_name,
-      node_status=text_status
-   )
-   logger.warning(text_message)
-   app_courier.append_message(text_message=text_message)
 
 
 @logger.catch

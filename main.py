@@ -3,7 +3,7 @@ from loguru import logger
 
 import asyncio
 from typing import NoReturn
-from socket import gethostname
+from sys import version_info
 
 from src.massa import monitor_loop
 from src.telegram import app_courier, courier_loop, bot_session
@@ -11,7 +11,7 @@ from src.telegram import app_courier, courier_loop, bot_session
 
 @logger.catch
 async def main() -> NoReturn:
-   app_courier.append_message(text_message=f"🏃 Started on {gethostname()}")
+   app_courier.append_message(text_message=f"🏃 Started!")
    try:
       async with asyncio.TaskGroup() as t_group:
          def1_result = t_group.create_task(monitor_loop())
@@ -28,6 +28,7 @@ if __name__ == "__main__":
               backtrace=True, diagnose=True, enqueue=True,
               rotation="1 day", retention="1 month", compression="zip")
    logger.info(f"*** MASSA remote monitor starting...")
+   assert (version_info.major == 3 and version_info.minor >= 11), "You need Python version 3.11+ to run"
 
    try:
       asyncio.run(main=main())
